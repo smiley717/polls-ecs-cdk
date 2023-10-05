@@ -10,5 +10,11 @@ export class PollsEcrStack extends cdk.Stack {
 		const repository = new ecr.Repository(this, 'PollsEcrRepo', {
 			repositoryName: 'polls-js-node-app'
 		});
+
+		// Export the ECR repository ARN
+		new cdk.CfnOutput(this, 'PollsEcrRepoArn', {
+			value: repository.repositoryArn,
+			exportName: 'PollsEcrRepoArn',
+		});
 	}
 }
