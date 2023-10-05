@@ -11,6 +11,10 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 ```shell
 npm install -g aws-cdk
 ```
+- We need to deploy PollsEcrStack at first to push Docker image.
+```shell
+cdk deploy PollsEcrStack
+```
 
 ## Push Docker Image
 
