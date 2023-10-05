@@ -11,7 +11,7 @@
     "cdk": "cdk",
     "aws:login": "aws sso login --profile polls-dev",
     "bootstrap": "AWS_PROFILE=polls-dev cdk bootstrap",
-    "deploy": "AWS_PROFILE=polls-dev cdk deploy"
+    "deploy": "AWS_PROFILE=polls-dev cdk deploy --all"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",
