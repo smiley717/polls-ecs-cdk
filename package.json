@@ -8,7 +8,10 @@
     "build": "tsc",
     "watch": "tsc -w",
     "test": "jest",
-    "cdk": "cdk"
+    "cdk": "cdk",
+    "aws:login": "aws sso login --profile polls-dev",
+    "bootstrap": "AWS_PROFILE=polls-dev cdk bootstrap",
+    "deploy": "AWS_PROFILE=polls-dev cdk deploy"
   },
   "devDependencies": {
     "@types/jest": "^29.5.5",
