@@ -37,7 +37,7 @@ export class PollsEcsStack extends cdk.Stack {
 		});
 
 		// Get the image from the repository
-		const pollsJsImage = ecs.ContainerImage.fromEcrRepository(pollsJsEcrRepository, `${imageName}:${imageTag}`);
+		const pollsJsImage = ecs.ContainerImage.fromEcrRepository(pollsJsEcrRepository, `${imageTag}`);
 
 		// Define baseline task properties
 		const taskProps = {
