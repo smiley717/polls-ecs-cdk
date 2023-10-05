@@ -47,6 +47,7 @@ export class PollsEcsStack extends cdk.Stack {
 					iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AmazonECSTaskExecutionRolePolicy'),
 				],
 			}),
+			memoryLimitMiB: 1048,
 			containerDefinitions: [
 				{
 					pollsJsImage,
@@ -61,7 +62,7 @@ export class PollsEcsStack extends cdk.Stack {
 		const pollsJsContainer = fargateTaskDefinition.addContainer('PollsContainer', {
 			image: pollsJsImage,
 			containerName: 'polls-js-container',
-			memoryLimitMiB: 2048,
+			memoryLimitMiB: 512,
 		});
 
 		pollsJsContainer.addPortMappings({
@@ -73,8 +74,8 @@ export class PollsEcsStack extends cdk.Stack {
 		// Create an ECS Fargate service
 		const fargateService = new ApplicationLoadBalancedFargateService(this, 'PollsFargateService', {
 			cluster: cluster,
-			memoryLimitMiB: 2048,
-			cpu: 1024,
+			memoryLimitMiB: 4096,
+			cpu: 2048,
 			desiredCount: 2,
 			taskDefinition: fargateTaskDefinition,
 			minHealthyPercent: 100,
