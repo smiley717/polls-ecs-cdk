@@ -47,7 +47,7 @@ export class PollsEcsStack extends cdk.Stack {
 					iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AmazonECSTaskExecutionRolePolicy'),
 				],
 			}),
-			memoryLimitMiB: 1048,
+			memoryLimitMiB: 2048,
 			containerDefinitions: [
 				{
 					pollsJsImage,
