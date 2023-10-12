@@ -37,6 +37,14 @@ cdk deploy PollsEcrStack
   docker push your_account_id.dkr.ecr.your-region.amazonaws.com/your-repository-name:latest
   ```
 
+  ```
+  [profile]
+  sso_start_url=https://platform.awsapps.com/start
+  sso_account_id=
+  sso_role_name=
+  sso_region=
+  ```
+
 ## Useful commands
 
 * `yarn build`   compile typescript to js
